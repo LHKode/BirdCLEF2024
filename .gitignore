@@ -1,0 +1,6 @@
+inputs/
+YOHO/
+_pycache_/
+model/
+wandb/
+data/
