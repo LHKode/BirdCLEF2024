@@ -1,6 +1,10 @@
-inputs/
+inputs/*
+!inputs/README.md
+
+model/*/*
+!model/*/*.pt
+
 YOHO/
 _pycache_/
-model/
 wandb/
 data/
