@@ -1,17 +1,29 @@
-VERSION: "v0.7"
+#-------Info-------#
+VERSION: "v1.3"
+DESCRIPTION: "Get all 5s data"
 DATA_PATH: "inputs"
-LOAD_SPEC_DATA: True
+#################################################
 
+
+#-------Global-------#
+LOAD_SPEC_DATA: "data/spec_5sec_256_256_drop_dup.npy"
 SEED: 24
+#################################################
 
+
+#-------Spectogram Transform-------#
 SAMPLE_RATE: 32000
-N_FFT: 1095
+N_FFT: 1095 #[1024, 2048]
 WIN_SIZE: 412
 WIN_LAP: 100
-MIN_FREQ: 40
-MAX_FREQ: 15000
+MIN_FREQ: 40 #[20,50]
+MAX_FREQ: 15000 #[14000,16000]
+#################################################
 
-EPOCHS: 10
+
+#-------Training hyperparameter-------#
+EPOCHS: 10 #[5,30]
 FOLD: 5
 BACTHSIZE: 16
-LABEL_SMOOTHING: 0.1
+LABEL_SMOOTHING: 0.
+#################################################

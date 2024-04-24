@@ -3,6 +3,9 @@ inputs/*
 
 model/*/*
 !model/*/*.pt
+!model/*/*.html
+
+BirdSoundDenoise/*
 
 YOHO/
 _pycache_/
