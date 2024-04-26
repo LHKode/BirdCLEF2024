@@ -1,12 +1,12 @@
 #-------Info-------#
-VERSION: "v1.3"
-DESCRIPTION: "Get all 5s data"
+VERSION: "v1.5"
+DESCRIPTION: "3 Level Hierarchical with weighted loss"
 DATA_PATH: "inputs"
 #################################################
 
 
 #-------Global-------#
-LOAD_SPEC_DATA: "data/spec_5sec_256_256_drop_dup.npy"
+LOAD_SPEC_DATA: "data/spec_center_5sec_256_256.npy"
 SEED: 24
 #################################################
 
@@ -14,6 +14,17 @@ SEED: 24
 #-------Spectogram Transform-------#
 SAMPLE_RATE: 32000
 N_FFT: 1095 #[1024, 2048]
+WIN_SIZE: 412
+WIN_LAP: 100
+MIN_FREQ: 40 #[20,50]
+MAX_FREQ: 15000 #[14000,16000]
+#################################################
+
+
+#-------Mel Spectogram Transform-------#
+N_FFT: 1024 #[1024, 2048]
+N_MEL: 128
+HOP_LENGTH: 320
 WIN_SIZE: 412
 WIN_LAP: 100
 MIN_FREQ: 40 #[20,50]
