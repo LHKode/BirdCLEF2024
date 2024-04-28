@@ -1,12 +1,13 @@
 #-------Info-------#
-VERSION: "v1.5"
-DESCRIPTION: "3 Level Hierarchical with weighted loss"
+VERSION: "v1.7"
+DESCRIPTION: "First 5s with 21-22-23-24"
 DATA_PATH: "inputs"
 #################################################
 
 
 #-------Global-------#
-LOAD_SPEC_DATA: "data/spec_center_5sec_256_256.npy"
+LOAD_SPEC_DATA: ["data/spec_first_5sec_256_256_24.npy",
+                "data/spec_first_5sec_256_256_212223.npy"]
 SEED: 24
 #################################################
 
@@ -29,6 +30,10 @@ WIN_SIZE: 412
 WIN_LAP: 100
 MIN_FREQ: 40 #[20,50]
 MAX_FREQ: 15000 #[14000,16000]
+#################################################
+
+#-------Spectogram Augmentation-------#
+XYMasking: True
 #################################################
 
 
