@@ -1,14 +1,14 @@
 #-------Info-------#
-VERSION: "v1.7"
-DESCRIPTION: "First 5s with 21-22-23-24"
+VERSION: "v2.2"
+DESCRIPTION: "first 5s"
 DATA_PATH: "inputs"
 #################################################
 
 
 #-------Global-------#
-LOAD_SPEC_DATA: ["data/spec_first_5sec_256_256_24.npy",
-                "data/spec_first_5sec_256_256_212223.npy"]
+LOAD_SPEC_DATA: ["data/spec_first_5sec_256_256_24.npy"]
 SEED: 24
+SECOND_LABEL: 1
 #################################################
 
 
@@ -42,4 +42,5 @@ EPOCHS: 10 #[5,30]
 FOLD: 5
 BACTHSIZE: 16
 LABEL_SMOOTHING: 0.
+LOSS: CrossEntropyLoss #CrossEntropyLoss
 #################################################
