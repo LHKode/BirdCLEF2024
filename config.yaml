@@ -1,6 +1,6 @@
 #-------Info-------#
-VERSION: "v3.6"
-DESCRIPTION: "top 5 google with stride 1s"
+VERSION: "v5.3"
+DESCRIPTION: "Add DropOut"
 DATA_PATH: "inputs"
 #################################################
 
@@ -33,19 +33,29 @@ NORM: "slaney"
 MEL_SCALE: "slaney"
 #################################################
 
+#-------Audio Augmentation-------#
+VolumeGain: False
+AddShortNoises: False
+AddGaussianNoise: False
+TimeStretch: False
+AddColorNoise: False
+AddBackgroundNoise: False
+#################################################
+
 #-------Spectogram Augmentation-------#
 XYMasking: True
-CoarseDropout: True
+CoarseDropout: False
 HorizontalFlip: True
-MixUp: True
+MixUp: False
+CutMix: False
 #################################################
 
 
 #-------Training hyperparameter-------#
-BACKBONE: "tf_efficientnet_b0.in1k"
+BACKBONE: "eca_nfnet_l0" # ["tf_efficientnet_b0.in1k" 256; "tf_efficientnetv2_s.in21k" 300;  "seresnext26t_32x4d.bt_in1k" 224; "tf_efficientnet_b3.ns_jft_in1k" 300; "resnet34.a1_in1k" 224; "efficientnet_b3.ra2_in1k" 288; "resnet50.a1_in1k" 224; "eca_nfnet_l0.ra2_in1k" 224]
 EPOCHS: 10 #[5,30]
 FOLD: 5
 BACTHSIZE: 48
 LABEL_SMOOTHING: 0.
-LOSS: FocalLoss #CrossEntropyLoss
+LOSS: CrossEntropyLoss #CrossEntropyLoss
 #################################################
